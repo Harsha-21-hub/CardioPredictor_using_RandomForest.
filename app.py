@@ -21,6 +21,7 @@ except:
     st.stop()
 
 # --- UI Layout ---
+st.set_page_config(page_title="Cardio Predictor", layout="wide")
 st.title("🫀 The Cardio Predictor")
 st.markdown("### AI-Powered Early Warning System for Heart Disease")
 
@@ -123,6 +124,7 @@ with col3:
     - 📊 **Visual Dashboard:** Instant interpretation for doctors.
 
     """)
+
 
 
 
