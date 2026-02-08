@@ -1,6 +1,10 @@
 # 🫀 The Cardio Predictor
 **Heart Health Early Warning System**  
 
+## 🚀 Live Demo
+🔗 https://cardio-predictor-using-random-forest.streamlit.app/
+
+
 ## 📌 Mission
 Heart attacks often strike without warning. This project helps doctors identify
 at-risk patients years in advance by analyzing medical history and generating
@@ -42,3 +46,4 @@ pip install -r requirements.txt
 python train_model.py
 
 streamlit run app.py
+
