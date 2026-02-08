@@ -1,7 +1,8 @@
-pandas
+streamlit==1.19.0
+altair==4.2.2
 numpy
+pandas
 scikit-learn
-streamlit
+matplotlib
 plotly
 joblib
-matplotlib
