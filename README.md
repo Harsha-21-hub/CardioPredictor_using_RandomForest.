@@ -1,6 +1,5 @@
 # 🫀 The Cardio Predictor
 **Heart Health Early Warning System**  
-ID: udbhav_015
 
 ## 📌 Mission
 Heart attacks often strike without warning. This project helps doctors identify
@@ -39,3 +38,7 @@ personalized heart disease risk scores.
 ### 1️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
+
+python train_model.py
+
+streamlit run app.py
