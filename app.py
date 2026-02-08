@@ -47,7 +47,7 @@ with col1:
     thal = st.selectbox("Thalassemia", options=[3, 6, 7], format_func=lambda x: {3: "Normal", 6: "Fixed Defect", 7: "Reversable Defect"}[x])
 
     # Combine inputs
-    features = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+    features = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]], dtype=np.float64)
     
     # Impute (just in case of weird inputs, though Streamlit handles types well)
     features_processed = imputer.transform(features)
@@ -114,4 +114,5 @@ with col3:
     - 🤖 **Random Forest AI:** Robust classification.
     - 🛡️ **Missing Data Handling:** Uses statistical imputation.
     - 📊 **Visual Dashboard:** Instant interpretation for doctors.
+
     """)
