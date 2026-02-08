@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
+import pandas as pd
 import plotly.graph_objects as go # type: ignore
 import matplotlib.pyplot as plt
 
@@ -46,11 +47,16 @@ with col1:
     ca = st.number_input("Major Vessels (0-3)", 0, 3, 0)
     thal = st.selectbox("Thalassemia", options=[3, 6, 7], format_func=lambda x: {3: "Normal", 6: "Fixed Defect", 7: "Reversable Defect"}[x])
 
-    # Combine inputs
-    features = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]], dtype=np.float64)
+    feature_columns = [
+    "age", "sex", "cp", "trestbps", "chol", "fbs", "restecg",
+    "thalach", "exang", "oldpeak", "slope", "ca", "thal"]
+
+    features_df = pd.DataFrame(
+        [[age, sex, cp, trestbps, chol, fbs, restecg,
+          thalach, exang, oldpeak, slope, ca, thal]],
+        columns=feature_columns)
     
-    # Impute (just in case of weird inputs, though Streamlit handles types well)
-    features_processed = imputer.transform(features)
+    features_processed = imputer.transform(features_df)
 
 with col2:
     st.header("Risk Analysis")
@@ -116,3 +122,4 @@ with col3:
     - 📊 **Visual Dashboard:** Instant interpretation for doctors.
 
     """)
+
