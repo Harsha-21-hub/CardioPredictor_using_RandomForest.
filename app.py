@@ -15,7 +15,7 @@ def load_model():
     return model
 
 try:
-    model, imputer = load_model()
+    model = load_model()
 except:
     st.error("Model not found! Please run 'train_model.py' first.")
     st.stop()
@@ -123,5 +123,6 @@ with col3:
     - 📊 **Visual Dashboard:** Instant interpretation for doctors.
 
     """)
+
 
 
